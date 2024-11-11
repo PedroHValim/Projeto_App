@@ -115,6 +115,100 @@ class Cadastro extends React.Component{
   }
 }
 
+class Stack2 extends React.Component{
+    render(){
+      return(
+        <Stack.Navigator>
+          <Stack.Screen  name = "Login" component = {Principal} options = {{headerShown: false}} />
+          <Stack.Screen name = "Cadastro" component={Cadastro} options = {{headerShown: false}}/>
+          <Stack.Screen name = "Central" component={Central} options = {{headerShown: false}}> </Stack.Screen>
+          <Stack.Screen name = "Loja" component={Loja} options = {{headerShown: false}}> </Stack.Screen>
+          <Stack.Screen name = "Carrinho" component={Carrinho} options = {{headerShown: false}}> </Stack.Screen>
+          <Stack.Screen name = "Sobre" component={Sobre} options = {{headerShown: false}}> </Stack.Screen>
+        </Stack.Navigator>
+      )
+    }
+  }
+  
+  class Loja extends React.Component{
+    render(){
+      return (
+      <Drawer.Navigator
+        screenOptions={{
+           headerStyle: {
+                backgroundColor: '#8D6E63',
+              },headerTitleStyle: {
+                color: '#2C1B18',
+                fontWeight: 'bold',
+                fontSize: 22,
+              },drawerStyle: {
+                backgroundColor: '#8D6E63', 
+                width: 220, 
+              },
+              headerRight: () => (
+              <TouchableOpacity 
+                style={{ marginRight: 20 }} 
+                onPress={() => this.props.navigation.navigate('Central')} >
+                <MaterialCommunityIcons name="logout" size={30}  color="#2C1B18" />
+              </TouchableOpacity>
+            )
+        }}
+  
+        drawerContent={(props) => (
+          <View style={{ flex: 1 }}>
+          <View style={{ flex: 1, marginTop: '15%'}}>
+                <TouchableOpacity
+                  onPress={() => props.navigation.navigate('Home')}
+                  style={styles.drawerItem}
+                >
+                  <Text style = {styles.drawerItemLetra}>Home</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => props.navigation.navigate('Camisas')}
+                  style={styles.drawerItem}
+                >
+                  <Text style = {styles.drawerItemLetra}>Camisas</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => props.navigation.navigate('Calças e Bermudas')}
+                  style={styles.drawerItem}
+                >
+                  <Text style = {styles.drawerItemLetra}>Calças e Bermudas</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => props.navigation.navigate('Calçados')}
+                  style={styles.drawerItem}
+                >
+                  <Text style = {styles.drawerItemLetra}>Calçados</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => props.navigation.navigate('Acessórios')}
+                  style={styles.drawerItem}
+                >
+                  <Text style = {styles.drawerItemLetra}>Acessórios</Text>
+                </TouchableOpacity>
+              </View>
+  
+              <TouchableOpacity
+                style={styles.botaoSair}
+                onPress={() => this.props.navigation.navigate("Central")}
+              >
+                <MaterialCommunityIcons name="logout" size={30} color="#2C1B18" />
+                <Text style={{ color: '#2C1B18', marginLeft: 10,fontWeight: 'bold' }}>Sair</Text>
+              </TouchableOpacity>
+            </View>
+        )}              
+      >
+        <Drawer.Screen name="Home" component={Home}/>
+        <Drawer.Screen name="Camisas" component={Camisas} />
+        <Drawer.Screen name="Calças e Bermudas" component={CalcaseBermudas} />
+        <Drawer.Screen name="Calçados" component={Calcados} />
+        <Drawer.Screen name="Acessórios" component={Acessorios} />
+      </Drawer.Navigator>
+    );
+    }
+  }
+
 class App extends React.Component {
 
     render() {

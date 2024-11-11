@@ -915,4 +915,312 @@ class App extends React.Component {
     }
   }
 
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#BCAAA4', 
+    },containerHud: {
+      flexGrow: 1,
+      gap: 20,
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      backgroundColor: '#BCAAA4', 
+      padding: 10,
+    },containerLogo: {
+      flex:1.7,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },containerForm: {
+      flex:1.7,
+      justifyContent: 'center',
+      backgroundColor: '#FFF', 
+      borderTopRightRadius: 25,
+      borderTopLeftRadius: 25,
+      paddingStart: '5%',
+      paddingEnd: '5%',
+    },containerTitle: {
+      flex:2,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    containerForm2: {
+      flex:1.7,
+      justifyContent: 'center',
+      backgroundColor: '#FFF', 
+      borderTopRightRadius: 25,
+      borderTopLeftRadius: 25,
+      paddingStart: '5%',
+      paddingEnd: '5%',
+    },
+    buttonRegistrar:{
+      marginTop: '3%',
+      alignSelf: 'center'
+    },textRegistrar: {
+      color: '#6D4C41',
+      alignSelf: 'center'
+    },
+    label: {
+      fontSize: 19,
+      color: '#6D4C41', // Marrom escuro
+      marginBottom: 8,
+      fontFamily: 'Roboto',
+    },labelSobre: {
+      fontSize: 25,
+      alignSelf: 'center',
+      color: '#2C1B18', // Marrom escuro
+      marginBottom: '3%',
+      marginTop:'7%',
+      fontFamily: 'Roboto',
+    },textSobre: {
+      alignSelf: 'center',
+      fontSize: 15,
+      color: 'black',
+      fontFamily: 'Roboto',
+    },
+    input: {
+      height: 45,
+      borderColor: '#BCAAA4', // Marrom claro
+      borderWidth: 1,
+      borderRadius: 8,
+      paddingHorizontal: 12,
+      marginBottom: 20,
+      fontSize: 16,
+      backgroundColor: '#FFFFFF', // Branco
+      fontFamily: 'Roboto',
+    },
+    button: {
+      backgroundColor: '#8D6E63', // Marrom médio
+      paddingVertical: 12,
+      paddingHorizontal: 12,
+      borderRadius: 8,
+      alignItems: 'center',
+      marginVertical: '2%',
+    },
+    buttonText: {
+      color: '#FFF', // Branco para contraste
+      fontSize: 22,
+      fontWeight: 'bold',
+      fontFamily: 'Roboto',
+      marginBottom: 5
+    },
+    title: {
+      fontSize: 40,
+      alignSelf: 'center',
+      justifyContent: 'center',
+      marginVertical: 20,
+      color: '#3E2723',
+      fontWeight: 'bold',
+      fontFamily: 'Roboto',
+    },title2: {
+      fontSize: 40,
+      textAlign: 'center',
+      marginTop: '10%',
+      marginBottom: '2%',
+      margin: '5%',
+      color: '#3E2723',
+      fontWeight: 'bold',
+      fontFamily: 'Roboto',
+    },
+    title3: {
+    fontSize: 32, 
+    textAlign: 'center', 
+    color: '#FFF',
+    fontWeight: 'bold',
+    fontFamily: 'Roboto',
+    paddingVertical: 10,
+    letterSpacing: 4.5, //Dei uns espaços entre as letras para ficar mais moderno, algo do tipo
+    textTransform: 'uppercase', //letras em maiusculo
+  },
+    logo: {
+      width: 150,
+      height: 150,
+      borderRadius: 75,
+      borderWidth: 2,
+      borderColor: '#000',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    header: {
+      backgroundColor: '#6D4C41',
+      borderWidth: 4,
+      borderRadius: 10,
+      borderColor: '#6D4C41'
+    },headerCarrinho: {
+      width: '100%',
+      justifyContent: 'flex-end',
+      alignItems:'center',
+      paddingBottom:'7%',
+      height:'14%',
+      marginTop: '1%',
+      backgroundColor: '#6D4C41',
+      borderWidth: 4,
+      borderRadius: 10,
+      borderColor: '#6D4C41'
+    },
+    drawerItem: {
+      padding: 15,
+      marginTop: '3%',
+      marginLeft: '4%',
+      marginRight: '4%',
+      borderRadius: 10,
+      borderWidth: 2,
+      borderColor: '#2C1B18',
+      backgroundColor: '#BCAAA4',
+    },
+    botaoSair: {
+      bottom:20,
+      padding: 10,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 5,
+    },drawerItemLetra: {
+      color: 'black', 
+      fontSize: 18,
+      fontFamily: 'Roboto'
+    },
+    banner: {
+      width: '100%',
+      height: 200,
+      marginBottom: 20,
+      borderRadius: 10,
+      overflow: 'hidden',
+    },
+    bannerCorinthians: {
+      width: '100%',
+      height: '100%',
+      resizeMode: 'cover',
+    },
+    textoCorinthians: {
+      bottom: '30%',
+      color: '#fff',
+      fontSize: 22,
+      fontWeight: 'bold',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      borderRadius: 5,
+      padding:10,
+      alignSelf: 'center'
+    },
+    cardCategoria: {
+      width: 100,
+      marginRight: 20,
+      alignItems: 'center',
+      backgroundColor: '#8D6E63',
+      borderRadius: 10,
+      paddingTop: '2%',
+    },
+    tamanhoImagemCategoria: {
+      width: 80,
+      height: 80,
+      borderRadius: 10,
+      marginBottom: 10,
+    },
+    textoCategoria: {
+      fontSize: 14,
+      fontWeight: 'bold',
+      textAlign: 'center',
+    },
+    titulosDaHome: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      marginBottom: 10,
+      color: '#7E4B3C',
+    },
+    cardProduto: {
+      width: 150,
+      marginRight: 20,
+      alignItems: 'center',
+      backgroundColor: '#8D6E63',
+      borderRadius: 10,
+      padding: 10,
+    },
+    tamanhoImagemProduto: {
+      width: 130,
+      height: 130,
+      borderRadius: 5,
+      marginBottom: 10,
+    },
+    descricaoProduto: {
+      fontSize: 16,
+      fontWeight: 'bold',
+      textAlign: 'center',
+      marginBottom: 5,
+    },
+    containerOferta: {
+      marginBottom: 20,
+      backgroundColor: '#8D6E63',
+      borderRadius: 10,
+      padding: 20,
+      alignItems: 'center',
+      justifyContent: 'center',
+      elevation: 5, 
+    },
+    textoOferta: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      color: '#2C1B18',
+      marginBottom: 15,
+    },
+    botaoVer: {
+      backgroundColor: '#7E4B3C',
+      padding: 12,
+      borderRadius: 5,
+    },
+    textoBotaoVer: {
+      color: '#fff',
+      fontSize: 16,
+      fontWeight: 'bold',
+    },
+    redesSociais: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      paddingTop: 10,
+      marginBottom: '20%'
+    },
+    textoRedesSociais: {
+      color: '#2C1B18',
+      fontSize: 16,
+      fontWeight: 'bold',
+    },containerHome: {
+      flex: 1,
+      backgroundColor: '#BCAAA4',
+      padding: 15,
+    },
+    itemCarrinho: {
+      backgroundColor: '#fff',
+      padding: 15,
+      marginBottom: 10,
+      marginLeft: '3%',
+      marginRight: '3%',
+      borderRadius: 8,
+      shadowColor: '#000',
+      shadowOpacity: 0.1,
+      shadowRadius: 5,
+      elevation: 2,
+    },
+    textoItem: {
+      fontSize: 16,
+      fontWeight: '600',
+      color: '#333',
+    },
+    textoCarrinhoVazio: {
+      fontSize: 16,
+      color: '#888',
+      textAlign: 'center',
+    },botaoRemover: {
+      backgroundColor: '#3E2723', // Vermelho para indicar remoção
+      paddingVertical: 8,
+      paddingHorizontal: 12,
+      borderRadius: 5,
+      marginTop: 10,
+      alignSelf: 'flex-start',
+    },
+    textoBotaoRemover: {
+      color: '#fff',
+      fontWeight: 'bold',
+      fontSize: 14,
+    },
+  });
+
   export default App;

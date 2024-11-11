@@ -794,6 +794,112 @@ class Stack2 extends React.Component{
     }
   }
 
+  class Carrinho extends React.Component {
+    state = {
+    selectedItems: [],
+  };
+
+  async componentDidMount() {
+    try {
+      const cartItems = await AsyncStorage.getItem('cartItems');
+      const selectedItems = cartItems ? JSON.parse(cartItems) : [];
+      this.setState({ selectedItems });
+    } catch (error) {
+      console.error("Erro ao carregar itens do carrinho", error);
+    }
+  }
+
+  removeItem = async (id) => {
+    try {
+      let { selectedItems } = this.state;
+      selectedItems = selectedItems.filter(item => item.id !== id);
+      this.setState({ selectedItems });
+      await AsyncStorage.setItem('cartItems', JSON.stringify(selectedItems));
+    } catch (error) {
+      console.error("Erro ao remover item do carrinho", error);
+    }
+  };
+
+  render() {
+    const { selectedItems } = this.state;
+
+    return (
+      <View style={styles.container}>
+        <View style={styles.headerCarrinho}>
+          <Text style={styles.title3}>Meu Carrinho!</Text>
+        </View>
+        <ScrollView style={{marginBottom: '10%'}}>
+          <Text style={styles.title}>Itens</Text>
+          {selectedItems.length > 0 ? (
+            selectedItems.map((item, index) => (
+              <View key={index} style={styles.itemCarrinho}>
+                <Text style={styles.textoItem}>Item: {item.name}</Text>
+                <TouchableOpacity
+                  style={styles.botaoRemover}
+                  onPress={() => this.removeItem(item.id)}
+                >
+                  <Text style={styles.textoBotaoRemover}>Remover</Text>
+                </TouchableOpacity>
+              </View>
+            ))
+          ) : (
+            <Text style={styles.textoCarrinhoVazio}>Seu carrinho está vazio.</Text>
+          )}
+        </ScrollView>
+        <View style={{posiiton:'absolute',bottom:0}}>
+          <TouchableOpacity
+            style={styles.botaoSair}
+            onPress={() =>this.props.navigation.navigate('Central')}
+          >
+            <MaterialCommunityIcons name="logout" size={30} color="#2C1B18" />
+            <Text style={{ color: '#2C1B18', marginLeft: 10, fontWeight: 'bold' }}>
+              Voltar às compras
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
+}
+
+class Sobre extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style = {styles.headerCarrinho}>
+          <Text style={styles.title3}>{"Desenvolvedor"}</Text>
+        </View>
+        <ScrollView style={{alignItems:'center',flex: 0.8}}>
+            <Text style={styles.labelSobre}>{"Nome:"}</Text>
+            <Text style={styles.textSobre}>{"Pedro Henrique Ferreira Valim"}</Text>
+            <Text style={styles.labelSobre}>{"Faculdade:"}</Text>
+            <Text style={styles.textSobre}>{"FEI: Faculdade de Engenharia Industrial"}</Text>
+            <Text style={styles.labelSobre}>{"Curso:"}</Text>
+            <Text style={styles.textSobre}>{"Ciência da Computação"}</Text>
+            <Text style={styles.labelSobre}>{"Ciclo:"}</Text>
+            <Text style={styles.textSobre}>{"4º Semestre"}</Text>
+            <Text style={styles.labelSobre}>{"Matéria:"}</Text>
+            <Text style={styles.textSobre}>{"Computação Móvel"}</Text>
+            <Text style={styles.labelSobre}>{"Docentes:"}</Text>
+            <Text style={styles.textSobre}>{"Prof. Rafael Gomes Alves"}</Text>
+            <Text style={styles.textSobre}>{"Prof. Isaac Jesus Silva "}</Text>
+            <Text style={styles.labelSobre}>{"Experiência:"}</Text>
+            <Text style={styles.textSobre}>{'"Fazer este código foi além de muito divertido, muito prático e me deu uma noção muito maior de tudo sobre Computação Móvel, indico todos a tentarem um dia explorarem este mundo, espero que tenham gostado da "Sport Chic"!"'}</Text>
+            <Text style={styles.labelSobre}>{}</Text>
+        </ScrollView>
+        <View style={{height:'10%', backgroundColor:'#6D4C41',alignItems:'center',justifyContent:'center'}}>
+          <TouchableOpacity
+              style={styles.botaoSair}
+              onPress={() => this.props.navigation.navigate("Central")}>
+              <MaterialCommunityIcons name="logout" size={30} color="#2C1B18" />
+              <Text style={{ color: '#2C1B18', marginLeft: 10,fontWeight: 'bold' }}>Voltar</Text>
+            </TouchableOpacity>
+        </View>    
+      </View>
+    );
+  }
+}
+
 class App extends React.Component {
 
     render() {

@@ -2,7 +2,7 @@
 
 **-Desenvolvedor:** Pedro Henrique Ferreira Valim
 
-**-Idéa:**
+**-Idéia:**
 
 Procurei fazer um aplicativo relacionado a roupas juntamente com o mundo do esporte, então temos diversos itens esportivo ou roupas de academia, entre outros.
 

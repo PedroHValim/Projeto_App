@@ -59,3 +59,7 @@ A partir do desenvolvimento deste projeto, foi possível atingir o objetivo espe
 
 
 ![Captura de tela 2024-11-11 190658](https://github.com/user-attachments/assets/d9e104a9-a748-422e-b81f-4d656ec13441)
+
+# Vídeo do funcionamento do aplicativo:
+
+https://youtu.be/T1DZyD0vLvY
